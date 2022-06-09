@@ -10,28 +10,29 @@
 body {
     background: hsl(0, 0%, 95%);
     height: 100vh;
-    display: grid;
-    grid-template-columns: repeat(3, 300px);
     justify-content: center;
     align-items: center;
+}
+
+.flex-container {
+    margin: 10px;
+    padding: 10px 30px 10px 30px;
 }
 
 .first-grid {
     background: hsl(31, 77%, 52%);
     padding: 40px;
-    border-radius: 10px 0px 0px 10px;
-    margin-top: auto;
+    border-radius: 10px 10px 0px 0px;
 }
 .second-grid {
     background: hsl(184, 100%, 22%);
     padding: 40px;
-    margin-top: auto;
 }
 .third-grid {
     background: hsl(179, 100%, 13%);
     padding: 40px;
-    border-radius: 0px 10px 10px 0px;
-    margin-top: auto;
+    border-radius: 0px 0px 10px 10px;
+    
 }
 
 .first-grid h1 {
@@ -63,7 +64,6 @@ button {
     padding: 15px 32px;
     border-radius: 500px;
     border: none;
-    display: inline-block;
     margin-top: 80px;
 }
 .first-grid button {
@@ -78,8 +78,6 @@ button {
 .attribution {
     font-size: 12px; 
     text-align: center; 
-    grid-column: 1 / span 3;
-    grid-row: 3;
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
@@ -87,15 +85,27 @@ button {
 }
 
 button:hover {
-    position: relative;
-    border: 2px solid hsl(0, 0%, 95%);
+    border: 1px solid hsl(0, 0%, 95%);
     color: hsl(0, 0%, 95%);
     background-color: transparent;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
 }
 
-@media screen and (max-width: 768px) {
-    body {
-        display: block;
-        margin: 15px 20px;
+@media (min-width: 992px) {
+    .flex-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        max-width: 900px;
+        margin: auto;
+    }
+    .first-grid {
+        border-radius: 10px 0px 0px 10px;
+    }
+    .third-grid {
+        border-radius: 0px 10px 10px 0px;
+        
     }
 }
